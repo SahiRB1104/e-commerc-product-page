@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase - Modern Footwear Store</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <a href="#home" class="logo">ShopEase</a>
+      <ul class="nav-links" role="navigation">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#cart">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section
+  <section id="home" class="hero">
+    <h1>Welcome to ShopEase</h1>
+    <p>Your one-stop shop for stylish footwear!</p>
+    <a href="#products" class="cta-button" aria-label="Explore Products">Explore Products</a>
+  </section> -->
+
+  <!-- Product Section -->
+  <main id="products">
+    <section class="product-container">
+      <!-- Product Image Gallery -->
+      <div class="product-gallery">
+        <img id="main-image" src="1.jpg" alt="Stylish Sneakers - Front View">
+        <div class="gallery-thumbnails">
+          <img src="1.jpg" alt="Sneakers - Front View" onclick="changeImage('1.jpg')" aria-label="View Front of Sneakers">
+          <!-- <img src="2.jpg" alt="Sneakers - Side View" onclick="changeImage('2.jpg')" aria-label="View Side of Sneakers">
+          <img src="3.jpg" alt="Sneakers - Back View" onclick="changeImage('3.jpg')" aria-label="View Back of Sneakers"> -->
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <div class="product-details">
+        <h1 class="product-name">Stylish Sneakers</h1>
+        <p class="product-description">High-quality sneakers for all-day comfort and style.</p>
+        <p class="product-price">RS 2999</p>
+        <button class="add-to-cart" aria-label="Add Stylish Sneakers to Cart">Add to Cart</button>
+        <button class="quick-view" onclick="openPopup()" aria-label="Quick View of Stylish Sneakers">Quick View</button>
+      </div>
+    </section>
+
+    <!-- Cards Container for Related Products -->
+    <section class="related-products">
+      <h2>Related Products</h2>
+      <div class="related-items">
+        <div class="card">
+          <img src="4.jpg" alt="Casual Shoes">
+          <div class="card-details">
+            <p>Casual Shoes</p>
+            <p>RS 3999</p>
+            <button class="card-button">View Details</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="2.jpg" alt="Running Shoes">
+          <div class="card-details">
+            <p>Running Shoes</p>
+            <p>RS 1999</p>
+            <button class="card-button">View Details</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="3.jpg" alt="Boots">
+          <div class="card-details">
+            <p>Boots</p>
+            <p>RS 3999</p>
+            <button class="card-button">View Details</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Quick View Popup -->
+  <div id="popup" class="popup" role="dialog" aria-hidden="true">
+    <div class="popup-content">
+      <button class="close" onclick="closePopup()" aria-label="Close Quick View">&times;</button>
+      <h2>Stylish Sneakers</h2>
+      <p>Elevate your footwear game with these Stylish Sneakers, designed for comfort and versatility. Perfect for casual outings or daily wear, these sneakers combine a sleek design with breathable material to ensure all-day ease. Pair them with your favorite outfits and step out in style!</p>
+      <p>Price: RS 2999</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+  <script>
+    // Change main image based on thumbnail click
+    function changeImage(src) {
+      const mainImage = document.getElementById('main-image');
+      mainImage.src = src;
+      mainImage.alt = `Stylish Sneakers - ${src.replace('.jpg', '').toUpperCase()} View`;
+    }
+
+    // Open the popup modal
+    function openPopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'flex';
+      popup.setAttribute('aria-hidden', 'false');
+    }
+
+    // Close the popup modal
+    function closePopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'none';
+      popup.setAttribute('aria-hidden', 'true');
+    }
+  </script>
+</body>
+</html>
