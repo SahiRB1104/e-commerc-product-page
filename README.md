@@ -1,1 +1,1 @@
-Initial commit
+MotionCut internship program
